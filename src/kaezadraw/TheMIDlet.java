@@ -15,7 +15,7 @@ public class TheMIDlet extends MIDlet implements CommandListener {
 	private static final Command CLEAR_COMMAND = new Command("Clear", Command.SCREEN, 3);
 
 	public static final void show(Displayable d) {
-		TheMIDlet.display.setCurrent(d);
+		TheMIDlet.show(d);
 	}
 
 	public void startApp() {
@@ -33,15 +33,15 @@ public class TheMIDlet extends MIDlet implements CommandListener {
 	public void commandAction(Command c, Displayable d) {
 		if (c == SAVE_FILE_COMMAND) {
 			FileDialog fd = new FileDialog(true, TheMIDlet.canvas);
-			TheMIDlet.display.setCurrent(fd);
+			TheMIDlet.show(fd);
 		}
 		else if (c == LOAD_FILE_COMMAND) {
 			FileDialog fd = new FileDialog(false, TheMIDlet.canvas);
-			TheMIDlet.display.setCurrent(fd);
+			TheMIDlet.show(fd);
 		}
 		else if (c == PALETTE_COMMAND) {
 			PaletteForm pf = new PaletteForm(TheMIDlet.canvas);
-			TheMIDlet.display.setCurrent(pf);
+			TheMIDlet.show(pf);
 		}
 		else if (c == CLEAR_COMMAND) {
 			
