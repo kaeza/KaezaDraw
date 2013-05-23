@@ -106,8 +106,10 @@ public class PaletteForm extends Form implements CommandListener, ItemCommandLis
 	};
 
 	private void doAppend(ColorItem item) {
+		Command ok = new Command("Select", Command.OK, 1);
 		item.setItemCommandListener(this);
-		item.addCommand(new Command("Select", Command.OK, 1));
+		item.addCommand(ok);
+		item.setDefaultCommand(ok);
 		append(item);
 	}
 

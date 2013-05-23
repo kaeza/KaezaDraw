@@ -1,7 +1,6 @@
 
 package kaezadraw;
 
-import javax.microedition.midlet.*;
 import javax.microedition.lcdui.*;
 import javax.microedition.lcdui.game.*;
 
@@ -48,6 +47,12 @@ public class DrawCanvas extends GameCanvas {
 		graphics.drawLine(lastX, lastY, x, y);
 		lastX = x;
 		lastY = y;
+		repaint();
+		serviceRepaints();
+	}
+
+	public void setImage(Image img) {
+		image = img;
 		repaint();
 		serviceRepaints();
 	}
